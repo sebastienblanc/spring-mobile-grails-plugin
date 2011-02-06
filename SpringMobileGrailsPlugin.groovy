@@ -3,11 +3,10 @@ import net.sourceforge.wurfl.core.Device;
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder;
 import org.codehaus.groovy.grails.commons.ConfigurationHolder;
-import org.springframework.mobile.device.lite.LiteDeviceResolver;
-import org.springframework.mobile.device.mvc.DeviceResolverHandlerInterceptor
-import org.springframework.mobile.device.switcher.SiteSwitcherHandlerInterceptor;
-import org.springframework.mobile.device.wurfl.WurflDeviceResolver
-import org.springframework.mobile.device.wurfl.WurflManagerFactoryBean
+import org.springframework.mobile.device.DeviceResolverHandlerInterceptor;
+import org.springframework.mobile.device.LiteDeviceResolver;
+import org.springframework.mobile.device.wurfl.WurflDeviceResolver;
+
 
 class SpringMobileGrailsPlugin {
 	// the plugin version
@@ -52,7 +51,7 @@ Device resolver based on the Spring Mobile Library
 		}
 		else{
 			deviceResolver(LiteDeviceResolver)
-			deviceResolverHandlerInterceptor(DeviceResolverHandlerInterceptor, ref('deviceResolver'))
+			deviceResolverHandlerInterceptor(org.springframework.mobile.device.DeviceResolverHandlerInterceptor, ref('deviceResolver'))
 			
 		}
 	
