@@ -24,6 +24,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>.link_to_grails_plugins</name>
+			<type>2</type>
+			<locationURI>GRAILS_ROOT/2.0.0/projects/springMobile/plugins</locationURI>
+		</link>
+		<link>
 			<name>maven-publisher-0.7.5-src-groovy</name>
 			<type>2</type>
 			<locationURI>GRAILS_ROOT/1.3.7/projects/spring-mobile-grails-plugin/plugins/maven-publisher-0.7.5/src/groovy</locationURI>

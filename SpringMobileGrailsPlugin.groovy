@@ -10,7 +10,7 @@ import org.springframework.mobile.device.wurfl.WurflDeviceResolver;
 
 class SpringMobileGrailsPlugin {
 	// the plugin version
-	def version = "0.2"
+	def version = "0.3"
 	// the version or versions of Grails the plugin is designed for
 	def grailsVersion = "1.3.6 > *"
 	
@@ -35,7 +35,7 @@ Device resolver based on the Spring Mobile Library
 	def doWithWebDescriptor = { xml ->
 		// TODO Implement additions to web.xml (optional), this event occurs before
 	}
-
+	def watchedResources = ["file:./grails-app/controllers/*Controller.groovy"]
 	def doWithSpring = {
 		
 		
@@ -78,10 +78,8 @@ Device resolver based on the Spring Mobile Library
 	}
 
 	def onChange = { event ->
-		// TODO Implement code that is executed when any artefact that this plugin is
-		// watching is modified and reloaded. The event contains: event.source,
-		// event.application, event.manager, event.ctx, and event.plugin.
-	}
+		def application = event.application
+		application.getArtefacts("Controller").each { klass -> addDynamicMethods(klass) }	}
 
 	def onConfigChange = { event ->
 		// TODO Implement code that is executed when the project configuration changes.
