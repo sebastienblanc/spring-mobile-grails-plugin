@@ -1,4 +1,3 @@
-
 import net.sourceforge.wurfl.core.Device;
 
 import org.codehaus.groovy.grails.commons.ApplicationHolder;
@@ -6,7 +5,7 @@ import org.codehaus.groovy.grails.commons.ConfigurationHolder;
 import org.springframework.mobile.device.DeviceResolverHandlerInterceptor;
 import org.springframework.mobile.device.LiteDeviceResolver;
 import org.springframework.mobile.device.wurfl.WurflDeviceResolver;
-
+import org.springframework.mobile.device.wurfl.WurflManagerFactoryBean
 
 class SpringMobileGrailsPlugin {
 	// the plugin version
