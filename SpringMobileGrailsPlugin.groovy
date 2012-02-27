@@ -9,7 +9,7 @@ import org.springframework.mobile.device.wurfl.WurflManagerFactoryBean
 
 class SpringMobileGrailsPlugin {
 	// the plugin version
-	def version = "0.3"
+	def version = "0.4"
 	// the version or versions of Grails the plugin is designed for
 	def grailsVersion = "1.3.6 > *"
 	
@@ -20,7 +20,7 @@ class SpringMobileGrailsPlugin {
 
 	// TODO Fill in these fields
 	def author = "Sebastien Blanc"
-	def authorEmail = "sblanc@e-id.nl"
+	def authorEmail = "scm.blanc@gmail.com"
 	def title = "Spring Mobile Grails plugin"
 	def description = '''\\
 Device resolver based on the Spring Mobile Library
