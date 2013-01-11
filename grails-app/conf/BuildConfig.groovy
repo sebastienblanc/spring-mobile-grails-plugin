@@ -26,7 +26,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-		compile 'org.springframework.mobile:spring-mobile-device:1.0.0.M3'
-		runtime 'net.sourceforge.wurfl:wurfl:1.2'		
+		compile 'org.springframework.mobile:spring-mobile-device:1.1.0.M1'
+		runtime 'net.sourceforge.wurfl:wurfl:1.3.1.1'		
     }
 }

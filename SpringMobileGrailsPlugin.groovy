@@ -70,6 +70,13 @@ Device resolver based on the Spring Mobile Library
 				closure.call(device)
 			}
 		}
+
+		klass.metaClass.withTablet = { Closure closure ->
+			def device = request.getAttribute("currentDevice")
+			if(device.isTablet()){
+				closure.call(device)
+			}
+		}
 	}
 
 	def doWithApplicationContext = { applicationContext ->
