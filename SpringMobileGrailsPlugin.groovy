@@ -4,12 +4,10 @@ import org.codehaus.groovy.grails.commons.ApplicationHolder;
 import org.codehaus.groovy.grails.commons.ConfigurationHolder;
 import org.springframework.mobile.device.DeviceResolverHandlerInterceptor;
 import org.springframework.mobile.device.LiteDeviceResolver;
-import org.springframework.mobile.device.wurfl.WurflDeviceResolver;
-import org.springframework.mobile.device.wurfl.WurflManagerFactoryBean
 
 class SpringMobileGrailsPlugin {
 	// the plugin version
-	def version = "0.4"
+	def version = "0.5-SNAPSHOT"
 	// the version or versions of Grails the plugin is designed for
 	def grailsVersion = "1.3.6 > *"
 	
@@ -29,7 +27,6 @@ Device resolver based on the Spring Mobile Library
 	// URL to the plugin's documentation
 	def documentation = "http://grails.org/plugin/spring-mobile"
 	
-	def wurflDeviceResolver
 	def config = ConfigurationHolder.config
 	def doWithWebDescriptor = { xml ->
 		// TODO Implement additions to web.xml (optional), this event occurs before
@@ -37,22 +34,8 @@ Device resolver based on the Spring Mobile Library
 	def watchedResources = ["file:./grails-app/controllers/*Controller.groovy"]
 	def doWithSpring = {
 		
-		
-		if(config.springMobile?.deviceResolver=='wurfl'){
-			wurflManager(WurflManagerFactoryBean, '/WEB-INF/wurfl/wurfl-2.0.25.zip') { patchLocations = '/WEB-INF/wurfl/web_browsers_patch.xml' }
-			deviceResolver(WurflDeviceResolver, ref('wurflManager'))
-			deviceResolverHandlerInterceptor(DeviceResolverHandlerInterceptor, ref('deviceResolver'))
-			
-				
-			
-		}
-		else{
-			deviceResolver(LiteDeviceResolver)
-			deviceResolverHandlerInterceptor(org.springframework.mobile.device.DeviceResolverHandlerInterceptor, ref('deviceResolver'))
-			
-		}
-	
-		
+        deviceResolver(LiteDeviceResolver)
+        deviceResolverHandlerInterceptor(org.springframework.mobile.device.DeviceResolverHandlerInterceptor, ref('deviceResolver'))
 		
 	}
 	
@@ -67,6 +50,13 @@ Device resolver based on the Spring Mobile Library
 		klass.metaClass.withMobileDevice = { Closure closure ->
 			def device = request.getAttribute("currentDevice")
 			if(device.isMobile()){
+				closure.call(device)
+			}
+		}
+
+		klass.metaClass.withTablet = { Closure closure ->
+			def device = request.getAttribute("currentDevice")
+			if(device.isTablet()){
 				closure.call(device)
 			}
 		}
