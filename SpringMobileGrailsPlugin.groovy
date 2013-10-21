@@ -28,12 +28,19 @@ class SpringMobileGrailsPlugin {
 	}
 
 	private void addDynamicMethods(klass) {
+
 		klass.metaClass.withMobileDevice = { Closure closure ->
 			def device = request.currentDevice
 			if (device?.isMobile()) {
 				closure.call device
 			}
 		}
+
+		klass.metaClass.isMobile = { -> request.currentDevice.isMobile() }
+
+		klass.metaClass.isTablet = { -> request.currentDevice.isTablet() }
+
+		klass.metaClass.isNormal = { -> request.currentDevice.isNormal() }
 	}
 
 	def onChange = { event ->
