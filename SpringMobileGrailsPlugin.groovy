@@ -11,10 +11,11 @@ class SpringMobileGrailsPlugin {
 
 	def license = 'APACHE'
 	def developers = [
+		[name: 'Burt Beckwith', email: 'burt@burtbeckwith.com'],
 		[name: 'Sebastien Blanc', email: 'scm.blanc@gmail.com']
 	]
-	def issueManagement = [system: 'GITHUB', url: 'https://github.com/sebastienblanc/spring-mobile-grails-plugin']
-	def scm = [url: 'https://github.com/sebastienblanc/spring-mobile-grails-plugin']
+	def issueManagement = [system: 'GITHUB', url: 'https://github.com/burtbeckwith/grails-spring-mobile/issues']
+	def scm = [url: 'https://github.com/burtbeckwith/grails-spring-mobile']
 
 	def doWithSpring = {
 		deviceResolver(LiteDeviceResolver)
