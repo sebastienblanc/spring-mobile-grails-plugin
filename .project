@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>spring-mobile-grails-plugin</name>
+	<name>grails-spring-mobile</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,4 +22,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>.link_to_grails_plugins</name>
+			<type>2</type>
+			<location>/home/burt/workspace/grails/plugins/grails-spring-mobile/target/plugins</location>
+		</link>
+	</linkedResources>
 </projectDescription>
