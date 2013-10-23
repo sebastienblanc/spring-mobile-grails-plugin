@@ -2,7 +2,7 @@ import org.springframework.mobile.device.DeviceResolverHandlerInterceptor
 import org.springframework.mobile.device.LiteDeviceResolver
 
 class SpringMobileGrailsPlugin {
-	def version = '0.4'
+	def version = '0.5'
 	def grailsVersion = '2.0 > *'
 	def title = 'Spring Mobile Grails plugin'
 	def description = 'Device resolver based on the Spring Mobile Library'
