@@ -12,7 +12,7 @@ grails.project.dependency.resolution = {
 	}
 
 	dependencies {
-		compile 'org.springframework.mobile:spring-mobile-device:1.1.0.RELEASE', {
+		compile 'org.springframework.mobile:spring-mobile-device:1.1.3.RELEASE', {
 			excludes 'javax.servlet-api', 'spring-web', 'spring-webmvc'
 		}
 	}
