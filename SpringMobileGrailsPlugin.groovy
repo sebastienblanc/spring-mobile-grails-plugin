@@ -1,5 +1,5 @@
 /*
- * Copyright 2009 the original author or authors
+ * Copyright 2009-2015 the original author or authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,52 +22,52 @@ import org.springframework.mobile.device.DeviceResolverHandlerInterceptor
 import org.springframework.mobile.device.LiteDeviceResolver
 
 class SpringMobileGrailsPlugin {
-    def version = '0.5.2'
-    def grailsVersion = '2.0 > *'
-    def title = 'Spring Mobile Plugin'
-    def description = 'Device resolver based on the Spring Mobile Library'
+	def version = '0.5.2'
+	def grailsVersion = '2.0 > *'
+	def title = 'Spring Mobile Plugin'
+	def description = 'Device resolver based on the Spring Mobile Library'
 
-    def documentation = 'http://grails.org/plugin/spring-mobile'
-    def license = 'APACHE'
+	def documentation = 'http://grails.org/plugin/spring-mobile'
+	def license = 'APACHE'
 
-    def developers = [
-            [name: 'Burt Beckwith', email: 'burt@burtbeckwith.com'],
-            [name: 'Sebastien Blanc', email: 'scm.blanc@gmail.com']
-    ]
-    def issueManagement = [url: 'https://github.com/burtbeckwith/grails-spring-mobile/issues']
-    def scm = [url: 'https://github.com/burtbeckwith/grails-spring-mobile']
+	def developers = [
+			[name: 'Burt Beckwith', email: 'burt@burtbeckwith.com'],
+			[name: 'Sebastien Blanc', email: 'scm.blanc@gmail.com']
+	]
+	def issueManagement = [url: 'https://github.com/burtbeckwith/grails-spring-mobile/issues']
+	def scm = [url: 'https://github.com/burtbeckwith/grails-spring-mobile']
 
-    def observe = ['controllers']
+	def observe = ['controllers']
 
-    def doWithSpring = {
-        deviceResolver(LiteDeviceResolver)
-        deviceResolverHandlerInterceptor(DeviceResolverHandlerInterceptor, ref('deviceResolver'))
-    }
+	def doWithSpring = {
+		deviceResolver(LiteDeviceResolver)
+		deviceResolverHandlerInterceptor(DeviceResolverHandlerInterceptor, ref('deviceResolver'))
+	}
 
-    def doWithDynamicMethods = { ctx ->
-        for (cc in application.controllerClasses) {
-            addDynamicMethods cc.clazz
-        }
-    }
+	def doWithDynamicMethods = { ctx ->
+		for (cc in application.controllerClasses) {
+			addDynamicMethods cc.clazz
+		}
+	}
 
-    private void addDynamicMethods(klass) {
-        klass.metaClass.withMobileDevice = { Closure closure ->
-            def device = request.currentDevice
-            if (device?.isMobile()) {
-                closure.call device
-            }
-        }
+	private void addDynamicMethods(klass) {
+		klass.metaClass.withMobileDevice = { Closure closure ->
+			def device = request.currentDevice
+			if (device?.isMobile()) {
+				closure.call device
+			}
+		}
 
-        klass.metaClass.isMobile = { -> request.currentDevice.isMobile() }
+		klass.metaClass.isMobile = { -> request.currentDevice.isMobile() }
 
-        klass.metaClass.isTablet = { -> request.currentDevice.isTablet() }
+		klass.metaClass.isTablet = { -> request.currentDevice.isTablet() }
 
-        klass.metaClass.isNormal = { -> request.currentDevice.isNormal() }
-    }
+		klass.metaClass.isNormal = { -> request.currentDevice.isNormal() }
+	}
 
-    def onChange = { event ->
-        for (cc in application.controllerClasses) {
-            addDynamicMethods cc.clazz
-        }
-    }
+	def onChange = { event ->
+		for (cc in application.controllerClasses) {
+			addDynamicMethods cc.clazz
+		}
+	}
 }

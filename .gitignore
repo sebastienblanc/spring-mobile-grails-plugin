@@ -1,10 +1,10 @@
 .DS_Store
+.idea
 .settings
+*.iml
 *.iws
 *.log
 eclipse
-.idea
-*.iml
 grails-spring-mobile-*.zip
 grails-spring-mobile-*.zip.sha1
 /plugin.xml
