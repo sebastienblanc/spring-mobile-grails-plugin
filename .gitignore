@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+.settings
+*.iml
+*.iws
+*.log
+eclipse
+grails-spring-mobile-*.zip
+grails-spring-mobile-*.zip.sha1
+/plugin.xml
+/target
+/web-app/WEB-INF

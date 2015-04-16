@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>springMobile</name>
+	<name>grails-spring-mobile</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -17,31 +17,9 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.springsource.sts.grails.core.nature</nature>
+		<nature>org.grails.ide.eclipse.core.nature</nature>
 		<nature>org.eclipse.jdt.groovy.core.groovyNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>.link_to_grails_plugins</name>
-			<type>2</type>
-			<locationURI>GRAILS_ROOT/2.0.0/projects/springMobile/plugins</locationURI>
-		</link>
-		<link>
-			<name>maven-publisher-0.7.5-src-groovy</name>
-			<type>2</type>
-			<locationURI>GRAILS_ROOT/1.3.7/projects/spring-mobile-grails-plugin/plugins/maven-publisher-0.7.5/src/groovy</locationURI>
-		</link>
-		<link>
-			<name>maven-publisher-0.7.5-src-java</name>
-			<type>2</type>
-			<locationURI>GRAILS_ROOT/1.3.7/projects/spring-mobile-grails-plugin/plugins/maven-publisher-0.7.5/src/java</locationURI>
-		</link>
-		<link>
-			<name>tomcat-1.3.7-src-groovy</name>
-			<type>2</type>
-			<locationURI>GRAILS_ROOT/1.3.7/projects/spring-mobile-grails-plugin/plugins/tomcat-1.3.7/src/groovy</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
